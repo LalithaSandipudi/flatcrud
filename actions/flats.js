@@ -41,7 +41,7 @@ export const addFlat = ({cost,availability}) => async (dispatch) => {
   
   export const updateFlat = (flatId,data) => async (dispatch) => {
     try {
-      const res = await FlatService.update(flatId,data);
+      const res = await FlatService.update(flatId, data);
       dispatch({
         type: UPDATE_FLAT,
         payload: data,

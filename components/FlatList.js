@@ -2,10 +2,7 @@ import React ,{useState,useEffect}from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {
-    retrieveFlats,
-
-}from '../actions/flats'
+import {retrieveFlats,}from '../actions/flats'
 export default function FlatList(props){
   //we have dispatched the actioncreator retrieveProducts
   //in the component loading time once only
@@ -80,7 +77,7 @@ return(
         
      </tr>))):(
         <tr>
-            <td colSpan={4}>No flats</td>
+            <td colSpan={8}>No flats</td>
         </tr>
      )}
 

@@ -3,22 +3,22 @@ import React , {useContext, useEffect, useState} from 'react'
 export default function EditFlatForm(props){
     
 
-    const[flat, setFlat ] = useState(props.currentFlat)
 
-    const  handleInputChange=(event) =>{
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-   
-        setFlat({...flat,
-          [name]: value
-        });
+    const [flat, setFlat ] = useState(props.currentFlat)
+    
+    console.log(JSON.stringify(flat)+" from editflatform")
+      const handleInputChange = (event)=>{
+         const {name,value} =event.target;
+          setFlat({...flat,[name]:value});
+  
+       }
+       console.log(JSON.stringify(flat)+" from handleupdate flatform")
+     const submitHandler=(event)=>{event.preventDefault();
+  
+         props.updateFlat(flat.flatId,flat);
+  
       }
-
- const submitHandler=(event)=>{event.preventDefault();
-            props.updateFlat(flat.flatId, flat);
-        }
-
+      console.log(JSON.stringify(flat)+" from submitupdate flatform")
         return(
 
             <form onSubmit={submitHandler}>
@@ -34,7 +34,7 @@ export default function EditFlatForm(props){
 
             <label>Availability</label>
             <input 
-            type='checkbox'
+            type='string'
             name='availability'
             value={flat.availability}
             onChange={handleInputChange}/> 

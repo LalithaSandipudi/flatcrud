@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { useDispatch } from 'react-redux';
-import { addFlat } from '../actions/flats';
+//import { useDispatch } from 'react-redux';
+//import { addFlat } from '../actions/flats';
 export default function AddFlatForm(props){
-   const dispatch=useDispatch();
+   //const dispatch=useDispatch();
 
     const initialFormState = {
        flatId:0,
@@ -25,7 +25,7 @@ export default function AddFlatForm(props){
         country:''
     } 
 
-   const[flatAddress, setFlatAddress] = useState(initialFlatAddressFormState);
+   const [flatAddress, setFlatAddress] = useState(initialFlatAddressFormState);
     
     const  handleFlatAddressChange=(event) =>{
         const target = event.target;
@@ -37,7 +37,7 @@ export default function AddFlatForm(props){
         });
       } 
 
-    const[flat, setFlat] = useState(initialFormState);
+    const [flat, setFlat] = useState(initialFormState);
     
    const  handleInputChange=(event) =>{
         const target = event.target;
@@ -68,13 +68,13 @@ export default function AddFlatForm(props){
 
         <form onSubmit={submitHandler} className="flat">
 
-             {/* <label>FlatId</label><br/>
+             <label>FlatId</label><br/>
              <input 
             type='number'
             name='flatId'
             value={flat.flatId}
             onChange={handleInputChange}/>
-            <br/> */}
+            <br/> 
 
             <label>Cost</label><br/>
             <input 
@@ -86,25 +86,25 @@ export default function AddFlatForm(props){
             <br/>
             <label>Availability</label><br/>
             <input 
-             type='checkbox'
+             type='text'
              name='availability'
              value={flat.availability}
              onChange={handleInputChange}/>
            
             <br/>
-        {/* <label>FlatAddress_Id</label><br/>
+         <label>FlatAddress_Id</label><br/>
             <input 
              type='number'
              name='flataddress_id'
-             value={flat.flatAddress.flatAddress_id}
+             value={flatAddress.flatAddress_id}
              onChange={handleFlatAddressChange}/>
            
-            <br/> */}
+            <br/> 
             <label>Street</label><br/>
             <input 
              type='text'
              name='street'
-             value={flat.flatAddress.street}
+             value={flatAddress.street}
              onChange={handleFlatAddressChange}/>
            
             <br/>
@@ -112,7 +112,7 @@ export default function AddFlatForm(props){
             <input 
              type='text'
              name='city'
-             value={flat.flatAddress.city}
+             value={flatAddress.city}
              onChange={handleFlatAddressChange}/>
            
             <br/>
@@ -120,7 +120,7 @@ export default function AddFlatForm(props){
             <input 
              type='number'
              name='pin'
-             value={flat.flatAddress.pin}
+             value={flatAddress.pin}
              onChange={handleFlatAddressChange}/>
            
             <br/>
@@ -128,7 +128,7 @@ export default function AddFlatForm(props){
             <input 
              type='text'
              name='state'
-             value={flat.flatAddress.state}
+             value={flatAddress.state}
              onChange={handleFlatAddressChange}/>
            
             <br/>
@@ -136,7 +136,7 @@ export default function AddFlatForm(props){
             <input 
              type='text'
              name='country'
-             value={flat.flatAddress.country}
+             value={flatAddress.country}
              onChange={handleFlatAddressChange}/>
            
             <br/>
